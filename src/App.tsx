@@ -29,12 +29,24 @@ function App() {
         
         <nav style={{ padding: '1rem', borderBottom: '1px solid #e5e5e5', marginBottom: '2rem' }}>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
-            <Link to="/"><Button variant="secondary">Søk</Button></Link>
-            <Link to="/faq-chatbot"><Button variant="secondary">Spørsmål og Svar</Button></Link>
-            <Link to="/theme-integration"><Button variant="secondary">Tema-integrasjon</Button></Link>
-            <Link to="/component-tips"><Button variant="secondary">Komponenttips</Button></Link>
-            <Link to="/slack-channels"><Button variant="secondary">Slack-kanaler</Button></Link>
-            <Link to="/changelog"><Button variant="secondary">Endringslogg</Button></Link>
+            <Button asChild variant="secondary">
+              <Link to="/">Søk</Link>
+            </Button>
+            <Button asChild variant="secondary">
+              <Link to="/faq-chatbot">Spørsmål og Svar</Link>
+            </Button>
+            <Button asChild variant="secondary">
+              <Link to="/theme-integration">Tema-integrasjon</Link>
+            </Button>
+            <Button asChild variant="secondary">
+              <Link to="/component-tips">Komponenttips</Link>
+            </Button>
+            <Button asChild variant="secondary">
+              <Link to="/slack-channels">Slack-kanaler</Link>
+            </Button>
+            <Button asChild variant="secondary">
+              <Link to="/changelog">Endringslogg</Link>
+            </Button>
           </div>
         </nav>
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { 
-  Box,
   Button,
   Heading,
   Paragraph
@@ -19,14 +18,14 @@ function App() {
   return (
     <Router>
       <div>
-        <Box background="default">
+        <div style={{ background: 'default' }}>
           <div style={{ padding: '2rem' }}>
-            <Heading level={1} size="xlarge" spacing>
+            <Heading level={1} data-size="2xl">
             Designsystemet Interaktive Konsepter
             </Heading>
-            <Paragraph>Utforsk interaktive funksjoner og dokumentasjon for designsystemet.</Paragraph>
+            <Paragraph data-size="md">Utforsk interaktive funksjoner og dokumentasjon for designsystemet.</Paragraph>
           </div>
-        </Box>
+        </div>
         
         <nav style={{ padding: '1rem', borderBottom: '1px solid #e5e5e5', marginBottom: '2rem' }}>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
@@ -51,7 +50,7 @@ function App() {
         </div>
 
         <footer style={{ padding: '2rem', textAlign: 'center', marginTop: '2rem', borderTop: '1px solid #e5e5e5' }}>
-          <Paragraph>Designsystemet Examples - Interactive Concepts</Paragraph>
+          <Paragraph data-size="md">Designsystemet Examples - Interactive Concepts</Paragraph>
         </footer>
       </div>
     </Router>

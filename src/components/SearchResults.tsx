@@ -25,7 +25,7 @@ const SearchResults: React.FC<SearchResultsProps> = ({ results, isLoading }) => 
   if (isLoading) {
     return (
       <div style={{ textAlign: 'center', padding: '32px' }}>
-        <Spinner size="medium" title="Searching..." variant="interaction" />
+        <Spinner data-size="md" aria-label="Laster..." aria-hidden="true" />
       </div>
     );
   }
@@ -36,7 +36,7 @@ const SearchResults: React.FC<SearchResultsProps> = ({ results, isLoading }) => 
 
   return (
     <div style={{ marginTop: '24px' }}>
-      <Heading level={2} size="small" spacing>
+      <Heading level={2} data-size="sm">
         Search Results ({results.length})
       </Heading>
       
@@ -47,11 +47,11 @@ const SearchResults: React.FC<SearchResultsProps> = ({ results, isLoading }) => 
               <div style={{ padding: '16px' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
                   <Link href={result.url}>
-                    <Heading level={3} size="xsmall" spacing={false}>
+                    <Heading level={3} data-size="xs">
                       {result.title}
                     </Heading>
                   </Link>
-                  <Tag size="small" color={
+                  <Tag data-color={
                     result.source === 'FAQ' ? 'success' :
                     result.source === 'Slack' ? 'info' :
                     'neutral'
@@ -63,7 +63,7 @@ const SearchResults: React.FC<SearchResultsProps> = ({ results, isLoading }) => 
                 <Divider color="subtle" />
                 
                 <div style={{ marginTop: '12px' }}>
-                  <Paragraph size="small" spacing={false}>
+                  <Paragraph data-size="sm">
                     {result.summary}
                   </Paragraph>
                 </div>

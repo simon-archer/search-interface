@@ -4,9 +4,9 @@
   "private": true,
   "homepage": "https://simon-archer.github.io/search-interface",
   "dependencies": {
-    "@digdir/designsystemet-css": "next",
-    "@digdir/designsystemet-react": "next",
-    "@digdir/designsystemet-theme": "next",
+    "@digdir/designsystemet-css": "^1.0.0-next.39",
+    "@digdir/designsystemet-react": "^1.0.0-next.39",
+    "@digdir/designsystemet-theme": "^1.0.0-next.39",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^7.0.1",

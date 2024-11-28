@@ -55,10 +55,10 @@ const Changelog: React.FC = () => {
 
   return (
     <div>
-      <Heading level={1} size="xlarge" spacing>
+      <Heading level={1} data-size="xl">
         Endringslogg
       </Heading>
-      <Paragraph spacing>
+      <Paragraph data-size="md">
         Se de siste oppdateringene og endringene i Designsystemet.
       </Paragraph>
 
@@ -70,13 +70,13 @@ const Changelog: React.FC = () => {
           type="release"
         >
           <div style={{ marginTop: '1rem' }}>
-            <Tag size="small" color="success">Ny funksjonalitet</Tag>
+            <Tag data-size="sm" data-color="success">Ny funksjonalitet</Tag>
             <ul>
               <li>Lagt til støtte for tastaturnavigasjon i nedtrekkslister</li>
               <li>Forbedret ARIA-attributter for skjermlesere</li>
             </ul>
 
-            <Tag size="small" color="warning">Feilrettinger</Tag>
+            <Tag data-size="sm" data-color="warning">Feilrettinger</Tag>
             <ul>
               <li>Fikset feil med fokushåndtering i modale vinduer</li>
               <li>Korrigert kontrastforhold i mørk modus</li>
@@ -106,7 +106,7 @@ const Changelog: React.FC = () => {
           type="patch"
         >
           <div style={{ marginTop: '1rem' }}>
-            <Tag size="small" color="warning">Feilrettinger</Tag>
+            <Tag data-size="sm" data-color="warning">Feilrettinger</Tag>
             <ul>
               <li>Fikset stilproblemer i Safari-nettleser</li>
               <li>Korrigert feil i datovalgkomponent</li>

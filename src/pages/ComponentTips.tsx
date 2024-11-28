@@ -12,10 +12,10 @@ import CodeSnippet from '../components/CodeSnippet';
 const ComponentTips: React.FC = () => {
   return (
     <div>
-      <Heading level={1} size="xlarge" spacing>
+      <Heading level={1} data-size="2xl">
         Komponenttips
       </Heading>
-      <Paragraph spacing>
+      <Paragraph data-size="md">
         Lær beste praksis og bruksretningslinjer for Designsystemet-komponenter.
       </Paragraph>
 
@@ -27,90 +27,135 @@ const ComponentTips: React.FC = () => {
         </Tabs.List>
 
         <div style={{ padding: '1rem' }}>
-          <Tabs.Content value="button">
+          <div>
             <Card>
               <div style={{ padding: '1rem' }}>
-                <Heading level={2} size="small" spacing>Beste praksis for knapper</Heading>
-                <Paragraph spacing>
-                  Lær hvordan du bruker knapper effektivt i applikasjonen din.
-                </Paragraph>
+                <div style={{ marginTop: '2rem' }}>
+                  <div style={{ display: 'grid', gap: '1rem' }}>
+                    <Tag data-size="sm" data-color="success">Beste praksis</Tag>
+                    <Heading level={2} data-size="sm">
+                      Beste praksis for knapper
+                    </Heading>
+                    <Paragraph data-size="md">
+                      Lær hvordan du bruker knapper effektivt i applikasjonen din.
+                    </Paragraph>
 
-                <div style={{ marginBottom: '1rem' }}>
-                  <Tag size="small" color="success">Beste praksis</Tag>
-                  <Paragraph spacing>Bruk primærknapper for hovedhandlinger.</Paragraph>
-                </div>
+                    <div style={{ marginBottom: '1rem' }}>
+                      <Tag data-size="sm" data-color="success">Beste praksis</Tag>
+                      <Paragraph data-size="md">
+                        Bruk primærknapper for hovedhandlinger.
+                      </Paragraph>
+                    </div>
 
-                <div style={{ marginBottom: '2rem' }}>
-                  <div style={{ display: 'flex', gap: '1rem', marginBottom: '1rem' }}>
-                    <Button variant="primary">Primærhandling</Button>
-                    <Button variant="secondary">Sekundærhandling</Button>
-                    <Button variant="tertiary">Tertiærhandling</Button>
-                  </div>
-                  <CodeSnippet code={`<Button variant="primary">Primærhandling</Button>
+                    <div style={{ marginBottom: '2rem' }}>
+                      <div style={{ display: 'flex', gap: '1rem', marginBottom: '1rem' }}>
+                        <Button variant="primary">Primærhandling</Button>
+                        <Button variant="secondary">Sekundærhandling</Button>
+                        <Button variant="tertiary">Tertiærhandling</Button>
+                      </div>
+                      <CodeSnippet code={`<Button variant="primary">Primærhandling</Button>
 <Button variant="secondary">Sekundærhandling</Button>
 <Button variant="tertiary">Tertiærhandling</Button>`} />
+                    </div>
+                  </div>
                 </div>
               </div>
             </Card>
-          </Tabs.Content>
+          </div>
 
-          <Tabs.Content value="card">
+          <div>
             <Card>
               <div style={{ padding: '1rem' }}>
-                <Heading level={2} size="small" spacing>Veiledning for kort-komponenter</Heading>
-                <Paragraph spacing>
+                <Heading level={2} data-size="sm">
+                  Veiledning for kort-komponenter
+                </Heading>
+                <Paragraph data-size="md">
                   Lær hvordan du strukturerer innhold ved hjelp av kort på en effektiv måte.
                 </Paragraph>
 
                 <div style={{ marginBottom: '1rem' }}>
-                  <Tag size="small" color="success">Beste praksis</Tag>
-                  <Paragraph spacing>Bruk kort for å gruppere relatert innhold.</Paragraph>
+                  <Tag data-size="sm" data-color="success">Beste praksis</Tag>
+                  <Paragraph data-size="md">
+                    Bruk kort for å gruppere relatert innhold.
+                  </Paragraph>
                 </div>
 
                 <div style={{ marginBottom: '2rem' }}>
-                  <Heading level={3} size="xsmall" spacing>Eksempelbruk</Heading>
+                  <Heading level={3} data-size="xs">
+                    Eksempelbruk
+                  </Heading>
                   <Card>
                     <div style={{ padding: '1rem' }}>
-                      <Heading level={3} size="xsmall" spacing>Korttittel</Heading>
-                      <Paragraph>Kortinnhold kommer her.</Paragraph>
+                      <Heading level={3} data-size="xs">
+                        Korttittel
+                      </Heading>
+                      <Paragraph data-size="md">
+                        Kortinnhold kommer her.
+                      </Paragraph>
                     </div>
                   </Card>
                   <CodeSnippet code={`<Card>
   <div style={{ padding: '1rem' }}>
-    <Heading level={3} size="xsmall" spacing>Korttittel</Heading>
-    <Paragraph>Kortinnhold kommer her.</Paragraph>
+    <Heading level={3} data-size="xs">
+      Korttittel
+    </Heading>
+    <Paragraph data-size="md">
+      Kortinnhold kommer her.
+    </Paragraph>
   </div>
 </Card>`} />
                 </div>
               </div>
             </Card>
-          </Tabs.Content>
+          </div>
 
-          <Tabs.Content value="typography">
+          <div>
             <Card>
               <div style={{ padding: '1rem' }}>
-                <Heading level={2} size="small" spacing>Typografiretningslinjer</Heading>
-                <Paragraph spacing>
+                <Heading level={2} data-size="sm">
+                  Typografiretningslinjer
+                </Heading>
+                <Paragraph data-size="md">
                   Lær hvordan du bruker typografikomponenter effektivt.
                 </Paragraph>
 
                 <div style={{ marginBottom: '2rem' }}>
                   <div style={{ marginBottom: '1rem' }}>
-                    <Heading level={1} size="xlarge" spacing>Overskrift XLarge</Heading>
-                    <Heading level={2} size="large" spacing>Overskrift Large</Heading>
-                    <Heading level={3} size="medium" spacing>Overskrift Medium</Heading>
-                    <Paragraph size="medium">Medium avsnitt tekst</Paragraph>
-                    <Paragraph size="small">Liten avsnitt tekst</Paragraph>
+                    <Heading level={1} data-size="2xl">
+                      Overskrift XLarge
+                    </Heading>
+                    <Heading level={2} data-size="lg">
+                      Overskrift Large
+                    </Heading>
+                    <Heading level={3} data-size="md">
+                      Overskrift Medium
+                    </Heading>
+                    <Paragraph data-size="md">
+                      Medium avsnitt tekst
+                    </Paragraph>
+                    <Paragraph data-size="sm">
+                      Liten avsnitt tekst
+                    </Paragraph>
                   </div>
-                  <CodeSnippet code={`<Heading level={1} size="xlarge" spacing>Overskrift XLarge</Heading>
-<Heading level={2} size="large" spacing>Overskrift Large</Heading>
-<Heading level={3} size="medium" spacing>Overskrift Medium</Heading>
-<Paragraph size="medium">Medium avsnitt tekst</Paragraph>
-<Paragraph size="small">Liten avsnitt tekst</Paragraph>`} />
+                  <CodeSnippet code={`<Heading level={1} data-size="2xl">
+Overskrift XLarge
+</Heading>
+<Heading level={2} data-size="lg">
+Overskrift Large
+</Heading>
+<Heading level={3} data-size="md">
+Overskrift Medium
+</Heading>
+<Paragraph data-size="md">
+Medium avsnitt tekst
+</Paragraph>
+<Paragraph data-size="sm">
+Liten avsnitt tekst
+</Paragraph>`} />
                 </div>
               </div>
             </Card>
-          </Tabs.Content>
+          </div>
         </div>
       </Tabs>
     </div>

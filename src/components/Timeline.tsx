@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Card, Heading, Paragraph, Tag } from '@digdir/designsystemet-react';
+import { Card, Heading, Paragraph, Tag } from '@digdir/designsystemet-react';
 
 interface TimelineItemProps {
   children: React.ReactNode;
@@ -16,16 +16,18 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
   description, 
   type 
 }) => {
-  const getTypeColor = (type: string): "success" | "warning" | "info" | "first" => {
-    switch (type.toLowerCase()) {
-      case 'release':
+  const getTypeColor = (type: string): 'success' | 'warning' | 'info' | 'neutral' => {
+    switch (type) {
+      case 'first':
+        return 'neutral';
+      case 'success':
         return 'success';
-      case 'patch':
+      case 'warning':
         return 'warning';
-      case 'docs':
+      case 'info':
         return 'info';
       default:
-        return 'first';
+        return 'neutral';
     }
   };
 
@@ -39,7 +41,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
             gap: '1rem', 
             marginBottom: '0.5rem' 
           }}>
-            <Tag size="small" color={getTypeColor(type)}>{type}</Tag>
+            <Tag data-size="sm" data-color={getTypeColor(type)}>{type}</Tag>
             <span style={{ color: '#666', fontSize: '0.875rem' }}>{date}</span>
           </div>
           <h3 style={{ margin: '0 0 0.5rem 0', fontSize: '1.25rem' }}>{title}</h3>

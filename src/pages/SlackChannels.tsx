@@ -62,7 +62,7 @@ const SlackChannels: React.FC = () => {
     }
   ];
 
-  const getCategoryColor = (category: string): "success" | "warning" | "info" | "first" => {
+  const getCategoryColor = (category: string): 'success' | 'warning' | 'info' | 'neutral' => {
     switch (category.toLowerCase()) {
       case 'hovedkanal':
         return 'success';
@@ -71,7 +71,7 @@ const SlackChannels: React.FC = () => {
       case 'spesialisert':
         return 'info';
       default:
-        return 'first';
+        return 'neutral';
     }
   };
 
@@ -83,10 +83,10 @@ const SlackChannels: React.FC = () => {
 
   return (
     <div>
-      <Heading level={1} size="xlarge" spacing>
+      <Heading level={1} data-size="2xl">
         Slack-kanaler
       </Heading>
-      <Paragraph spacing>
+      <Paragraph data-size="md">
         Finn relevante Slack-kanaler for Designsystemet-diskusjoner og støtte.
       </Paragraph>
 
@@ -108,7 +108,7 @@ const SlackChannels: React.FC = () => {
                   </td>
                   <td style={{ padding: '0.5rem' }}>{channel.purpose}</td>
                   <td style={{ padding: '0.5rem' }}>
-                    <Tag size="small" color={getCategoryColor(channel.category)}>
+                    <Tag data-size="sm" data-color={getCategoryColor(channel.category)}>
                       {channel.category}
                     </Tag>
                   </td>
@@ -120,7 +120,7 @@ const SlackChannels: React.FC = () => {
       </Card>
 
       <div style={{ marginTop: '2rem' }}>
-        <Heading level={2} size="medium" spacing>
+        <Heading level={2} data-size="md">
           Kanalforklaring
         </Heading>
         <Card>
@@ -128,18 +128,18 @@ const SlackChannels: React.FC = () => {
             <ul style={{ listStyle: 'none', padding: 0 }}>
               <li style={{ marginBottom: '1rem' }}>
                 <span style={{ marginRight: '0.5rem' }}>#</span>
-                <Tag size="small" color="success">Offentlig kanal</Tag>
-                <Paragraph spacing>Åpne kanaler for alle.</Paragraph>
+                <Tag data-color="success">Offentlig kanal</Tag>
+                <Paragraph data-size="sm">Åpne kanaler for alle.</Paragraph>
               </li>
               <li style={{ marginBottom: '1rem' }}>
                 <span style={{ marginRight: '0.5rem' }}>🔒</span>
-                <Tag size="small" color="warning">Privat kanal</Tag>
-                <Paragraph spacing>Kun for inviterte medlemmer.</Paragraph>
+                <Tag data-color="warning">Privat kanal</Tag>
+                <Paragraph data-size="sm">Kun for inviterte medlemmer.</Paragraph>
               </li>
               <li style={{ marginBottom: '1rem' }}>
                 <span style={{ marginRight: '0.5rem' }}>+</span>
-                <Tag size="small" color="info">Underkanal</Tag>
-                <Paragraph spacing>Spesialiserte temakanaler.</Paragraph>
+                <Tag data-color="info">Underkanal</Tag>
+                <Paragraph data-size="sm">Spesialiserte temakanaler.</Paragraph>
               </li>
             </ul>
           </div>

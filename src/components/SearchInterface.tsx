@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, ChangeEvent } from 'react';
 import { 
-  Search, 
   Paragraph, 
   Heading,
   Card,
   Divider,
   Alert,
-  Button
+  Button,
+  Search
 } from '@digdir/designsystemet-react';
 import SearchResults from './SearchResults';
 
@@ -32,20 +32,20 @@ const SearchInterface: React.FC = () => {
     setTimeout(() => {
       const mockResults: SearchResult[] = [
         {
-          title: 'FAQ: Getting Started',
-          summary: 'Guide on how to begin with our services and common setup procedures.',
+          title: 'FAQ: Kom i gang',
+          summary: 'Veiledning om hvordan du starter med våre tjenester og vanlige oppsettsprosedyrer.',
           source: 'FAQ',
           url: '#'
         },
         {
-          title: 'Slack Discussion: Best Practices',
-          summary: 'Team discussion about implementation patterns and recommended approaches.',
+          title: 'Slack-diskusjon: Beste praksis',
+          summary: 'Teamdiskusjon om implementeringsmønstre og anbefalte tilnærminger.',
           source: 'Slack',
           url: '#'
         },
         {
-          title: 'GitHub Issue: Performance Optimization',
-          summary: 'Technical discussion about improving application performance.',
+          title: 'GitHub Issue: Ytelsesoptimalisering',
+          summary: 'Teknisk diskusjon om forbedring av applikasjonsytelse.',
           source: 'GitHub',
           url: '#'
         }
@@ -60,33 +60,35 @@ const SearchInterface: React.FC = () => {
       <div style={{ maxWidth: '800px', margin: '0 auto' }}>
         <Card>
           <div style={{ padding: '24px' }}>
-            <Heading level={1} size="xlarge" spacing>
-              Knowledge Base Search
+            <Heading level={1} data-size="2xl">
+              Søk I Designsystemet
             </Heading>
-            <Paragraph spacing size="medium">
-              Search across FAQs, Slack discussions, and GitHub repositories to find the information you need.
+            <Paragraph data-size="md">
+            Søk gjennom vanlige spørsmål, Slack-diskusjoner og GitHub-repositorier for å finne informasjonen du trenger.
             </Paragraph>
             
-            <Alert severity="info">
-              Try searching for topics like "getting started", "best practices", or specific technical terms.
+            <Alert data-color="info">
+            Prøv søk på emner som "kom i gang", "beste praksis" eller spesifikke tekniske termer.
             </Alert>
 
             <div style={{ margin: '16px 0' }} />
             
-            <Search
-              label="Search knowledge base"
-              hideLabel={false}
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              onSearchClick={() => handleSearch(query)}
-              size="medium"
-            />
+            <Search>
+              <Search.Input 
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="Søk i kunnskapsbasen..."
+                aria-label="Søk i kunnskapsbasen..."
+              />
+              <Search.Clear onClick={() => setQuery('')} />
+              <Search.Button onClick={() => handleSearch(query)} />
+            </Search>
 
             <div style={{ margin: '16px 0' }} />
             
             {!isSearching && !results.length && query && (
-              <Alert severity="warning">
-                No results found. Try refining your search terms.
+              <Alert data-color="warning">
+                Ingen resultater funnet. Prøv å spesifisere søkeordene dine.
               </Alert>
             )}
 
@@ -101,13 +103,13 @@ const SearchInterface: React.FC = () => {
                 <div style={{ margin: '16px 0' }} />
                 <Button
                   variant="secondary"
-                  size="small"
+                  data-size="sm"
                   onClick={() => {
                     setQuery('');
                     setResults([]);
                   }}
                 >
-                  Clear Results
+                  Tøm resultater
                 </Button>
               </>
             )}

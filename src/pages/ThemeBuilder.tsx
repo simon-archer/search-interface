@@ -15,17 +15,17 @@ const ThemeIntegration: React.FC = () => {
   return (
     <div>
       <div style={{ marginBottom: '2rem', textAlign: 'center' }}>
-        <Heading level={1} size="xlarge" spacing>
+        <Heading level={1} data-size="2xl">
           Tema-integrasjon med Tokens Studio
         </Heading>
-        <Paragraph spacing style={{ maxWidth: '800px', margin: '0 auto' }}>
+        <Paragraph data-size="md" style={{ maxWidth: '800px', margin: '0 auto' }}>
           Denne guiden vil hjelpe deg med å sette opp og integrere designsystemets temaer ved hjelp av Tokens Studio for Figma.
           Følg stegene under for en sømløs integrasjon.
         </Paragraph>
       </div>
 
-      <Alert severity="info" style={{ maxWidth: '800px', margin: '0 auto 2rem' }}>
-        <Heading level={2} size="small" spacing>
+      <Alert data-color="info" style={{ maxWidth: '800px', margin: '0 auto 2rem' }}>
+        <Heading level={2} data-size="sm">
           Før du begynner
         </Heading>
         <List.Unordered>
@@ -44,17 +44,19 @@ const ThemeIntegration: React.FC = () => {
             <Tabs.Tab value="integration">4. Integrasjon</Tabs.Tab>
           </Tabs.List>
           
-          <Tabs.Content value="installation">
+          <Tabs.Panel value="installation">
             <Card>
               <div style={{ padding: '2rem' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
-                  <Tag color="info" size="small">Steg 1</Tag>
-                  <Heading level={2} size="medium">Installere Tokens Studio</Heading>
+                  <Tag data-color="info" data-size="sm">Steg 1</Tag>
+                  <Heading level={2} data-size="md">
+                    Installere Tokens Studio
+                  </Heading>
                 </div>
                 
                 <div style={{ display: 'grid', gap: '2rem' }}>
                   <div>
-                    <Heading level={3} size="small" spacing>Installer pluginen</Heading>
+                    <Heading level={3} data-size="sm" style={{ marginBottom: '1rem' }}>Installer pluginen</Heading>
                     <List.Unordered>
                       <List.Item>Åpne Figma og naviger til "Plugins" i menylinjen</List.Item>
                       <List.Item>Søk etter "Tokens Studio" og installer pluginen</List.Item>
@@ -62,39 +64,41 @@ const ThemeIntegration: React.FC = () => {
                   </div>
 
                   <div>
-                    <Heading level={3} size="small" spacing>Start pluginen</Heading>
+                    <Heading level={3} data-size="sm" style={{ marginBottom: '1rem' }}>Start pluginen</Heading>
                     <List.Unordered>
                       <List.Item>Etter installasjon, åpne Tokens Studio fra "Plugins"-menyen i Figma</List.Item>
                       <List.Item>Ved første oppstart vil du se en velkomstskjerm - klikk "Get started"</List.Item>
                     </List.Unordered>
                   </div>
 
-                  <Alert severity="success">
+                  <Alert data-color="success">
                     <strong>Tips:</strong> Du kan pinne Tokens Studio til din plugins-meny for rask tilgang
                   </Alert>
                 </div>
               </div>
             </Card>
-          </Tabs.Content>
+          </Tabs.Panel>
 
-          <Tabs.Content value="setup">
+          <Tabs.Panel value="setup">
             <Card>
               <div style={{ padding: '2rem' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
-                  <Tag color="info" size="small">Steg 2</Tag>
-                  <Heading level={2} size="medium">Grunnleggende oppsett</Heading>
+                  <Tag data-color="info" data-size="sm">Steg 2</Tag>
+                  <Heading level={2} data-size="md">
+                    Grunnleggende oppsett
+                  </Heading>
                 </div>
 
                 <div style={{ display: 'grid', gap: '2rem' }}>
                   <div>
-                    <Heading level={3} size="small" spacing>Organisering av tokens</Heading>
-                    <Paragraph spacing>
+                    <Heading level={3} data-size="sm" style={{ marginBottom: '1rem' }}>Organisering av tokens</Heading>
+                    <Paragraph data-size="md" style={{ marginBottom: '1rem' }}>
                       For best praksis, organiser tokens i logiske grupper:
                     </Paragraph>
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem', marginBottom: '1rem' }}>
                       <Card>
                         <div style={{ padding: '1rem' }}>
-                          <Tag color="first">Farger</Tag>
+                          <Tag data-size="sm" data-color="neutral">Farger</Tag>
                           <List.Unordered>
                             <List.Item>Primærfarger</List.Item>
                             <List.Item>Sekundærfarger</List.Item>
@@ -104,7 +108,7 @@ const ThemeIntegration: React.FC = () => {
                       </Card>
                       <Card>
                         <div style={{ padding: '1rem' }}>
-                          <Tag color="first">Typografi</Tag>
+                          <Tag data-size="sm" data-color="neutral">Typografi</Tag>
                           <List.Unordered>
                             <List.Item>Fonter</List.Item>
                             <List.Item>Størrelser</List.Item>
@@ -114,7 +118,7 @@ const ThemeIntegration: React.FC = () => {
                       </Card>
                       <Card>
                         <div style={{ padding: '1rem' }}>
-                          <Tag color="first">Spacing</Tag>
+                          <Tag data-size="sm" data-color="neutral">Spacing</Tag>
                           <List.Unordered>
                             <List.Item>Marginer</List.Item>
                             <List.Item>Padding</List.Item>
@@ -125,28 +129,30 @@ const ThemeIntegration: React.FC = () => {
                     </div>
                   </div>
 
-                  <Alert severity="info">
+                  <Alert data-color="info">
                     <strong>God praksis:</strong> Bruk beskrivende navn på tokens som reflekterer deres funksjon, ikke deres verdi
                   </Alert>
                 </div>
               </div>
             </Card>
-          </Tabs.Content>
+          </Tabs.Panel>
 
-          <Tabs.Content value="tokens">
+          <Tabs.Panel value="tokens">
             <Card>
               <div style={{ padding: '2rem' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
-                  <Tag color="info" size="small">Steg 3</Tag>
-                  <Heading level={2} size="medium">Token-håndtering</Heading>
+                  <Tag data-color="info" data-size="sm">Steg 3</Tag>
+                  <Heading level={2} data-size="md">
+                    Token-håndtering
+                  </Heading>
                 </div>
 
                 <div style={{ display: 'grid', gap: '2rem' }}>
                   <div>
-                    <Heading level={3} size="small" spacing>Opprette tokens</Heading>
+                    <Heading level={3} data-size="sm" style={{ marginBottom: '1rem' }}>Opprette tokens</Heading>
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', marginBottom: '1rem' }}>
                       <div>
-                        <Paragraph spacing>
+                        <Paragraph data-size="md" style={{ marginBottom: '1rem' }}>
                           <strong>Basis token-oppsett:</strong>
                         </Paragraph>
                         <List.Unordered>
@@ -157,7 +163,7 @@ const ThemeIntegration: React.FC = () => {
                         </List.Unordered>
                       </div>
                       <div>
-                        <Paragraph spacing>
+                        <Paragraph data-size="md" style={{ marginBottom: '1rem' }}>
                           <strong>Avanserte funksjoner:</strong>
                         </Paragraph>
                         <List.Unordered>
@@ -169,26 +175,28 @@ const ThemeIntegration: React.FC = () => {
                     </div>
                   </div>
 
-                  <Alert severity="warning">
+                  <Alert data-color="warning">
                     <strong>Viktig:</strong> Husk å synkronisere endringer regelmessig og ta backup av tokens
                   </Alert>
                 </div>
               </div>
             </Card>
-          </Tabs.Content>
+          </Tabs.Panel>
 
-          <Tabs.Content value="integration">
+          <Tabs.Panel value="integration">
             <Card>
               <div style={{ padding: '2rem' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
-                  <Tag color="info" size="small">Steg 4</Tag>
-                  <Heading level={2} size="medium">Kodeintegrasjon</Heading>
+                  <Tag data-color="info" data-size="sm">Steg 4</Tag>
+                  <Heading level={2} data-size="md">
+                    Kodeintegrasjon
+                  </Heading>
                 </div>
 
                 <div style={{ display: 'grid', gap: '2rem' }}>
                   <div>
-                    <Heading level={3} size="small" spacing>Implementer i React</Heading>
-                    <Paragraph spacing>
+                    <Heading level={3} data-size="sm" style={{ marginBottom: '1rem' }}>Implementer i React</Heading>
+                    <Paragraph data-size="md" style={{ marginBottom: '1rem' }}>
                       Integrer tokens i din React-applikasjon ved å følge disse stegene:
                     </Paragraph>
                     <CodeSnippet code={`import { ThemeProvider } from '@digdir/designsystemet-react';
@@ -204,7 +212,7 @@ function App() {
                   </div>
 
                   <div>
-                    <Heading level={3} size="small" spacing>Synkronisering og vedlikehold</Heading>
+                    <Heading level={3} data-size="sm" style={{ marginBottom: '1rem' }}>Synkronisering og vedlikehold</Heading>
                     <List.Unordered>
                       <List.Item>Eksporter tokens regelmessig fra Figma</List.Item>
                       <List.Item>Hold tokens.json oppdatert i kodebasen</List.Item>
@@ -212,7 +220,7 @@ function App() {
                     </List.Unordered>
                   </div>
 
-                  <Alert severity="success">
+                  <Alert data-color="success">
                     <strong>Neste steg:</strong> Utforsk avanserte funksjoner i{' '}
                     <Link href="https://tokens.studio" target="_blank">
                       Tokens Studio Pro
@@ -221,7 +229,7 @@ function App() {
                 </div>
               </div>
             </Card>
-          </Tabs.Content>
+          </Tabs.Panel>
         </Tabs>
       </div>
     </div>
